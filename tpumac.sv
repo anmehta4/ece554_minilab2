@@ -39,7 +39,7 @@ module tpumac
    always_ff @(posedge clk, negedge rst_n) begin
       if(~rst_n) begin
 	  Cout <= 0;
-      end else if (en) begin
+      end else if (en || WrEn) begin
 	  Cout <= mux_out;
       end
    end
